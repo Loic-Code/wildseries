@@ -6,11 +6,11 @@
 
 {% block body %}
 
-    <h1>Toutes les catégories de séries : </h1>
+    <h1 class="text-light bg-dark">Toutes les catégories de séries : </h1>
 
     {% for category in categories %}
 
-        <div>
+        <div class="text-light bg-dark">
 
             <h2>{{ category.id }} / {{ category.name }}</h2>
             <a href="{{ path("category_show", { categoryName: category.name }) }}">Voir toutes les séries</a>
@@ -21,12 +21,5 @@
         Aucune série trouvée.
 
     {% endfor %}
-
-
-    <a href="{{ path('app_index') }}">
-
-        Retour à l'accueil
-
-    </a>
 
 {% endblock %}

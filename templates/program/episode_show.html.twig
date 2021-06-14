@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Episode #{{ episode.number }}
+{% endblock %}
+
+
+{% block body %}
+	<div class="container">
+		<div class="card mx-auto" style="width: 18rem;">
+			<img class="card-img-top" src="{{ program.poster }}" alt="{{ program.title }}">
+			<div class="card-body">
+				<h5 class="card-title">Saison n° {{ season.number }}</h5>
+				<h5 class="card-title">Épisode n° {{ episode.number }}</h5>
+                <h5 class="card-text">{{ episode.title }}</h5>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">
+					<p>Résumé :
+						{{ episode.synopsis }}</p>
+				</li>
+			</ul>
+			<div class="card-body">
+				<a href="{{ path('program_index') }}" class="card-link">Retour à la liste des programmes</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

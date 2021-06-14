@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All programs
+{% endblock %}
+
+
+{% block body %}
+
+	<h1 class='text-light bg-dark'>Toutes les episode de la table saison :
+	</h1>
+
+	<div class='text-light bg-dark'>
+
+		<h2>
+			{{ program.title }}
+			- Catégorie :
+			{{ program.category.name }}</h2>
+
+		<p>{{ program.summary }}</p>
+		<p>{{ season.number}}</p>
+		<p>{{ season.description }}</p>
+
+	</div>
+
+	<ul class="text-white bg-dark">
+		{% for episode in episodes %}
+			<a href="{{ path('program_episode_show', {programId: program.id, seasonId: season.id, episodeId: episode.id}) }}">
+				<li class="list-group-item">
+					<h1>{{ episode.title }}</h1>
+					<p>{{ episode.synopsis }}</p>
+				</li>
+
+			{% else %}
+
+				Aucune série trouvée.
+
+			{% endfor %}
+		</ul>
+
+	{% endblock %}

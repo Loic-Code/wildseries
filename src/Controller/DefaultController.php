@@ -16,7 +16,7 @@ class DefaultController extends AbstractController
 
 {
     /**
-     * @Route("/app/", name="app_index")
+     * @Route("/", name="index")
      */
     public function index(): Response
 
